@@ -1,0 +1,119 @@
+---
+const education = {
+  university: "Plekhanov Russian University of Economics",
+  degree: "Bachelor, Management",
+  project: "Business models and development strategies of e-commerce companies",
+  period: "2010 - 2014"
+};
+
+const courses = [
+  {
+    name: "Python for Data Science, AI & Development",
+    institution: "Coursera",
+    period: "2024"
+  },
+  {
+    name: "Basic SQL",
+    institution: "Avito training center",
+    period: "2022 - 2023"
+  },
+  {
+    name: "Effective management",
+    institution: "Avito training center",
+    period: "2021 - 2021"
+  },
+  {
+    name: "Performance-marketer",
+    institution: "Netology training center",
+    period: "2020 - 2021"
+  },
+  {
+    name: "Professional retraining course \"Effective Digital Marketing\"",
+    institution: "Plekhanov Russian University of Economics",
+    period: "2015 - 2015"
+  }
+];
+
+const publications = [
+  {
+    title: "Analyzing Cultural Biases and Socioeconomic Influences in Online Ratings",
+    authors: "D. Marukhlenko, Gohar Feroz (University of Waikato/Zayed University)",
+    status: "Under review in Scientific Reports",
+    link: "https://assets-eu.researchsquare.com/files/rs-5667486/v1_covered_84702c0a-93a3-4e3c-84b7-6a0305a16a3f.pdf?c=1736849826",
+    findings: [
+      "Showed that countries socioeconomic factors influence online ratings.",
+      "Discovered that hotel guests from English-speaking countries tend to give higher and less varied ratings, than predominantly Muslim countries that use a wider range of scores resulting in lower average ratings.",
+      "Showed that hotel scores were most predictive of Hofstede's cultural dimensions of Individualism vs. Collectivism and Long-Term Orientation vs. Short-Term Normative Orientation."
+    ]
+  },
+  {
+    title: "Complementing the classification of SnP500 companies using investors' preferences",
+    authors: "A. Lensky (UNSW), P. Dworznik, D. Marukhlenko, G. Muraviev, Daniel Prior (UNSW)",
+    status: "Submitted to Finance Research Letters",
+    findings: [
+      "The industry a company is classified to in SnP500, is often different from the investors' perception of the company's industry.",
+      "A simple Bayesian model predicts companies section (1 out of 11) with 47% accuracy rate.",
+      "If investors are split into groups with an equal number of sentiment scores given by less active analysts, high active analysts and critics, then the former provide more informative sector prediction models."
+    ]
+  }
+];
+---
+
+<section class="bg-white rounded-lg shadow-sm p-8 mb-8">
+  <h2 class="text-2xl font-bold text-theme-heading mb-1">Education</h2>
+  <div class="text-theme-secondary mb-8">Academic Background & Professional Development</div>
+  
+  <div class="mb-8">
+    <div class="flex justify-between items-start mb-2">
+      <div>
+        <h3 class="text-xl font-semibold text-theme-accent">{education.university}</h3>
+        <div class="text-lg text-theme-secondary">{education.degree}</div>
+        <div class="text-sm text-theme-secondary/80">Graduation project: {education.project}</div>
+      </div>
+      <div class="text-sm text-theme-secondary bg-gray-100 px-3 py-1 rounded">
+        {education.period}
+      </div>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold text-theme-heading mb-4">Professional Development</h3>
+  <div class="space-y-4 mb-8">
+    {courses.map((course) => (
+      <div class="flex justify-between items-start">
+        <div>
+          <div class="text-theme-secondary font-medium">{course.name}</div>
+          <div class="text-sm text-theme-secondary/80">{course.institution}</div>
+        </div>
+        <div class="text-sm text-theme-secondary bg-gray-100 px-3 py-1 rounded">
+          {course.period}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <h3 class="text-xl font-semibold text-theme-heading mb-4">Publications</h3>
+  <div class="space-y-6">
+    {publications.map((pub) => (
+      <div class="border-b border-gray-100 pb-6 last:border-b-0 last:pb-0">
+        <h4 class="text-lg font-semibold text-theme-accent mb-1 flex items-center">
+          <span>{pub.title}</span>
+          {pub.link && (
+            <a href={pub.link} target="_blank" rel="noopener noreferrer" class="ml-2 text-sm text-blue-600 hover:text-blue-800 underline">
+              [View Paper]
+            </a>
+          )}
+        </h4>
+        <div class="text-theme-secondary mb-1">{pub.authors}</div>
+        <div class="text-sm text-theme-secondary/80 italic mb-3">{pub.status}</div>
+        <ul class="space-y-2">
+          {pub.findings.map((finding) => (
+            <li class="flex items-start gap-2">
+              <span class="text-theme-accent mt-1.5">•</span>
+              <span class="text-theme-text">{finding}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

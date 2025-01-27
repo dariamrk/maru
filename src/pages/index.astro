@@ -1,0 +1,18 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Summary from '../components/Summary.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+---
+
+<MainLayout title="Daria Marukhlenko - Digital Marketing Manager/Analyst">
+  <div slot="sidebar">
+    <Sidebar />
+  </div>
+  <main slot="content">
+    <Summary />
+    <Experience />
+    <Education />
+  </main>
+</MainLayout>

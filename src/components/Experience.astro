@@ -1,0 +1,82 @@
+---
+const experiences = [
+  {
+    title: "Marketing Manager",
+    company: "KoPilot",
+    description: "Travel-app (startup)",
+    period: "AUG 2024 - PRESENT",
+    achievements: [
+      "Conducted market research and qualitative research of the target audience.",
+      "Created go-to-market strategy."
+    ]
+  },
+  {
+    title: "Lead Performance Marketing Manager",
+    company: "Avito (ex. OLX)",
+    description: "Classified with 60M MAU and €1B annual revenue",
+    period: "JUL 2021 - AUG 2024",
+    achievements: [
+      "Implemented a data-driven approach by continuously conducting A/B testing in order to optimize advertising campaigns. This resulted in achieving a consistent annual growth in ROAS, averaging 26%, and an increase in the number of buyers, averaging 19% each year.",
+      "Participation in the tender procedure for selecting a new agency, integration, and management of the agency. As a result, ROAS increased by 34 percentage points with a budget increase of 62% over 6 months.",
+      "Development and launch of a promotion strategy for the new product in performance channels. As a result, the channel's share in lead generation >30%, with month-over-month growth, and CPL decreased by an average of 10% each month.",
+      "Continuous search and testing of new traffic channels. The effect of new channels added 2% to revenue with an ROAS above 200% in 2024.",
+      "Reworking current placements and conducting tests in B2B campaigns. Revenue exceeded the target by 4%, and seller acquisition exceeded the plan by 7%."
+    ]
+  },
+  {
+    title: "Performance Marketing Manager",
+    company: "Litres",
+    description: "№1 retailer of ebooks in Russia and CIS with 12M MAU",
+    period: "APR 2019 - JUL 2021",
+    achievements: [
+      "Conducted thorough competitor research and developed a promotion strategy for the Polish website, driving a 83% growth in orders and reducing the Cost Per Order (CPO) by 58% within the first year.",
+      "Implemented highly effective remarketing strategies, resulting in a 38% increase in cross-sales.",
+      "Redesigned search campaigns and optimized keywords on Google Ads, leading to a 41% reduction in CPO.",
+      "Developed and launched paid social campaigns on FB ads, resulting in sales increase by 33% within the allocated budget",
+      "Stayed up-to-date with industry trends, continually testing and adopting new techniques that led to a 36% improvement in overall campaign performance"
+    ]
+  },
+  {
+    title: "SEM Specialist",
+    company: "KIT Soler",
+    description: "Digital advertising agency (e-commerce, retail, services, real estate)",
+    period: "JAN 2017 - MAR 2019",
+    achievements: [
+      "Achieved a 62% increase in orders on the hypermarket \"Globus\" website while maintaining a strong ROAS.",
+      "Reduced CPL to 29% by conducting A/B tests and implementing optimizations for educational courses.",
+      "Successfully managed up to 10 simultaneous projects spanning e-commerce, services, and education domains, showcasing strong multitasking and project management skills.",
+      "Provided mentorship and guidance to junior team members, supporting their professional growth and development."
+    ]
+  }
+];
+---
+
+<section class="bg-white rounded-lg shadow-sm p-8 mb-8">
+  <h2 class="text-2xl font-bold text-theme-heading mb-1">Work Experience</h2>
+  <div class="text-theme-secondary mb-8">Digital Marketing & Analytics</div>
+  
+  <div class="space-y-8">
+    {experiences.map((job) => (
+      <div class="border-b border-gray-100 pb-8 last:border-b-0 last:pb-0">
+        <div class="flex justify-between items-start mb-2">
+          <div>
+            <h3 class="text-xl font-semibold text-theme-accent">{job.title}</h3>
+            <div class="text-lg text-theme-secondary">{job.company}</div>
+            <div class="text-sm text-theme-secondary/80 italic">{job.description}</div>
+          </div>
+          <div class="text-sm text-theme-secondary bg-gray-100 px-3 py-1 rounded">
+            {job.period}
+          </div>
+        </div>
+        <ul class="mt-4 space-y-2">
+          {job.achievements.map((achievement) => (
+            <li class="flex items-start gap-2">
+              <span class="text-theme-accent mt-1.5">•</span>
+              <span class="text-theme-text">{achievement}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
