@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://maru.lc/sitemap-index.xml
