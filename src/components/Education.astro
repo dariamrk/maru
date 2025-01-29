@@ -11,29 +11,7 @@ const courses = [
     name: "Data-driven Product Management Simulator",
     institution: "GoPractice Inc",
     period: "2025",
-        <div class="space-y-6">
-      {courses.map((course) => (
-        <div class="flex flex-col">
-          <h3 class="text-lg font-medium">{course.name}</h3>
-          <p class="text-gray-600">{course.institution} • {course.period}</p>
-          {course.certificateUrl && (
-            <a 
-              href={course.certificateUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex items-center gap-2 text-blue-600 hover:text-blue-800 w-fit mt-2 text-sm"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-              Show certificate
-            </a>
-          )}
-        </div>
-      ))}
-    </div>certificateUrl: "https://gopractice.ru/course/pm/certificate/l4113reg"
+    certificateUrl: "https://gopractice.ru/course/pm/certificate/l4113reg"
   },
 {
     name: "Google Ads - Measurement Certification",
@@ -117,16 +95,24 @@ const publications = [
   <h3 class="text-xl font-semibold text-theme-heading mb-4">Professional Development</h3>
   <div class="space-y-4 mb-8">
     {courses.map((course) => (
-      <div>
-        <h3>
-          {course.certificateUrl ? 
-            <a href={course.certificateUrl} target="_blank" rel="noopener noreferrer">
-              {course.name}
-            </a> : 
-            course.name
-          }
-        </h3>
-        <p>{course.institution} • {course.period}</p>
+      <div class="flex flex-col">
+        <h3 class="text-lg font-medium">{course.name}</h3>
+        <p class="text-gray-600">{course.institution} • {course.period}</p>
+        {course.certificateUrl && (
+          <a 
+            href={course.certificateUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-blue-600 hover:text-blue-800 w-fit mt-2 text-sm"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            Show certificate
+          </a>
+        )}
       </div>
     ))}
   </div>
