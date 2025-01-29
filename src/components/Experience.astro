@@ -63,7 +63,6 @@ const experiences = [
 
 <section class="bg-[#e6dfeb] rounded-lg shadow-sm p-8 mb-8">
   <h2 class="text-2xl font-bold text-theme-heading mb-1">Work Experience</h2>
-  <!-- <div class="text-theme-secondary mb-8">Digital Marketing & Analytics</div> -->
   
   <div class="space-y-8">
     {experiences.map((job) => (
@@ -80,9 +79,9 @@ const experiences = [
         </div>
         <ul class="mt-4 space-y-2">
           {job.achievements.map((achievement) => (
-            <li class="flex items-start gap-2">
-              <span class="text-theme-accent mt-1.5">•</span>
-              <span class="text-theme-text">{achievement}</span>
+            <li class="flex items-center gap-3">
+              <span class="text-theme-accent text-lg leading-none">•</span>
+              <span class="text-theme-text flex-1">{achievement}</span>
             </li>
           ))}
         </ul>

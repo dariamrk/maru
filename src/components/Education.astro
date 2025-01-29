@@ -169,11 +169,11 @@ const publications = [
         </div>
         <div class="text-theme-secondary mb-1">{pub.authors}</div>
         <div class="text-sm text-theme-secondary/80 italic mb-3">{pub.status}</div>
-        <ul class="space-y-2">
+        <ul class="mt-4 space-y-2">
           {pub.findings.map((finding) => (
-            <li class="flex items-start gap-2">
-              <span class="text-theme-accent mt-1.5">•</span>
-              <span class="text-theme-text">{finding}</span>
+            <li class="flex items-center gap-3">
+              <span class="text-theme-accent text-lg leading-none">•</span>
+              <span class="text-theme-text flex-1">{finding}</span>
             </li>
           ))}
         </ul>
