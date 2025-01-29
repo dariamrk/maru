@@ -8,9 +8,10 @@ const education = {
 
 const courses = [
 {
-    name: "Data-driven Product Mnagement Simulator",
+    name: "Data-driven Product Management Simulator",
     institution: "GoPractice Inc",
-    period: "2025"
+    period: "2025",
+    certificateUrl: "https://gopractice.io/course/pm/certificate/l4113reg"
   },
 {
     name: "Google Ads - Measurement Certification",
@@ -94,14 +95,16 @@ const publications = [
   <h3 class="text-xl font-semibold text-theme-heading mb-4">Professional Development</h3>
   <div class="space-y-4 mb-8">
     {courses.map((course) => (
-      <div class="flex justify-between items-start">
-        <div>
-          <div class="text-theme-secondary font-medium">{course.name}</div>
-          <div class="text-sm text-theme-secondary/80">{course.institution}</div>
-        </div>
-        <div class="text-sm text-theme-secondary bg-gray-100 px-3 py-1 rounded whitespace-nowrap">
-          {course.period}
-        </div>
+      <div>
+        <h3>
+          {course.certificateUrl ? 
+            <a href={course.certificateUrl} target="_blank" rel="noopener noreferrer">
+              {course.name}
+            </a> : 
+            course.name
+          }
+        </h3>
+        <p>{course.institution} • {course.period}</p>
       </div>
     ))}
   </div>
