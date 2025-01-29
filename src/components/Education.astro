@@ -16,22 +16,26 @@ const courses = [
 {
     name: "Google Ads - Measurement Certification",
     institution: "Google Digital Academy (Skillshop)",
-    period: "2024"
+    period: "2024",
+    certificateUrl: "https://gopractice.ru/course/pm/certificate/l4113reg"
   },
 {
     name: "Google Prompting Essentials",
     institution: "Google",
-    period: "2024"
+    period: "2024",
+    certificateUrl: "https://gopractice.ru/course/pm/certificate/l4113reg"
   },
   {
     name: "AI for Marketing",
     institution: "Coursera",
-    period: "2024"
+    period: "2024",
+    certificateUrl: "https://gopractice.ru/course/pm/certificate/l4113reg"
   },
   {
     name: "Marketing Analytics",
     institution: "University of Virginia",
-    period: "2024"
+    period: "2024",
+    certificateUrl: "https://gopractice.ru/course/pm/certificate/l4113reg"
   },
   {
     name: "Basic SQL",
@@ -96,32 +100,36 @@ const publications = [
   <div class="space-y-4 mb-8">
     {courses.map((course) => (
       <div class="flex flex-col">
-        <h3 class="text-lg font-medium">{course.name}</h3>
-        <p class="text-gray-600">{course.institution} • {course.period}</p>
-        {course.certificateUrl && (
-          <a 
-            href={course.certificateUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center mt-2 px-4 py-2 border border-gray-300 rounded-full text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
-    >
-      Show certificate
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        class="h-4 w-4 ml-2" 
-        fill="none" 
-        viewBox="0 0 24 24" 
-        stroke="currentColor"
-      >
-        <path 
-          stroke-linecap="round" 
-          stroke-linejoin="round" 
-          stroke-width={2} 
-          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
-        />
-            </svg>
-          </a>
-        )}
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="text-lg font-medium">{course.name}</h3>
+            <p class="text-gray-600">{course.institution} • {course.period}</p>
+          </div>
+          {course.certificateUrl && (
+            <a 
+              href={course.certificateUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center px-2 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors w-40"
+            >
+              Show certificate
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                class="h-4 w-4 ml-2" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width={2} 
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                />
+              </svg>
+            </a>
+          )}
+        </div>
       </div>
     ))}
   </div>
@@ -130,14 +138,35 @@ const publications = [
   <div class="space-y-6">
     {publications.map((pub) => (
       <div class="border-b border-gray-100 pb-6 last:border-b-0 last:pb-0">
-        <h4 class="text-lg font-semibold text-theme-accent mb-1 flex items-center">
-          <span>{pub.title}</span>
+        <div class="flex justify-between items-start mb-1">
+          <h4 class="text-lg font-semibold text-theme-accent">
+            <span>{pub.title}</span>
+          </h4>
           {pub.link && (
-            <a href={pub.link} target="_blank" rel="noopener noreferrer" class="ml-2 text-sm text-blue-600 hover:text-blue-800 underline">
-              [View Paper]
+            <a 
+              href={pub.link} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="inline-flex items-center px-2 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors w-40"
+            >
+              View Paper
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                class="h-4 w-4 ml-2" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width={2} 
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                />
+              </svg>
             </a>
           )}
-        </h4>
+        </div>
         <div class="text-theme-secondary mb-1">{pub.authors}</div>
         <div class="text-sm text-theme-secondary/80 italic mb-3">{pub.status}</div>
         <ul class="space-y-2">
