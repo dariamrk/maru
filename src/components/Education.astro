@@ -103,14 +103,23 @@ const publications = [
             href={course.certificateUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-2 text-blue-600 hover:text-blue-800 w-fit mt-2 text-sm"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
+            class="inline-flex items-center mt-2 px-4 py-2 border border-gray-300 rounded-full text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+    >
+      Show certificate
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        class="h-4 w-4 ml-2" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke="currentColor"
+      >
+        <path 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          stroke-width={2} 
+          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+        />
             </svg>
-            Show certificate
           </a>
         )}
       </div>
