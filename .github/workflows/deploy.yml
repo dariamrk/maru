@@ -1,10 +1,8 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger on pushes to main branch
   push:
     branches: [ main ]
-  # Allow manual deployment
   workflow_dispatch:
 
 permissions:
@@ -17,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
@@ -32,9 +30,9 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4  # Fix: use upload-artifact instead of upload-pages-artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: github-pages
+          name: github-pages  # Ensure artifact name is set correctly
           path: dist
 
   deploy:
@@ -44,12 +42,15 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v3  # Ensure this step is included
+
       - name: Download artifact
-        uses: actions/download-artifact@v4  # Fix: explicitly download the artifact
+        uses: actions/download-artifact@v4
         with:
-          name: github-pages
+          name: github-pages  # Ensure this matches the uploaded artifact name
           path: dist
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
