@@ -32,7 +32,7 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3  # Fix: use upload-artifact instead of upload-pages-artifact
+        uses: actions/upload-artifact@v4  # Fix: use upload-artifact instead of upload-pages-artifact
         with:
           name: github-pages
           path: dist
@@ -45,7 +45,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v3  # Fix: explicitly download the artifact
+        uses: actions/download-artifact@v4  # Fix: explicitly download the artifact
         with:
           name: github-pages
           path: dist
